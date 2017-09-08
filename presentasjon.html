@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+    @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+    @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+    body {
+      font-family: 'Droid Serif';
+      background-color: 'black';
+      color: white
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Yanone Kaffeesatz';
+      font-weight: normal;
+    }
+
+    .remark-code,
+    .remark-inline-code {
+      font-family: 'Ubuntu Mono';
+    }
+
+    .coloredBackground {
+      background-color: #000
+    }
+  </style>
+</head>
+
+<body>
+  <textarea id="source">
+
+class: center, middle, coloredBackground
+
+background-image: url(https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/20621783_1994620990817626_4894808814925052544_n.jpg?oh=62a86b48117ca77a5ba0d48db726135d&oe=5A153233)
+# 
+
+---
+
+class: coloredBackground
+
+# Kompoer
+
+- Overwatch
+- Super Smash Bros. Melee
+- Mario Kart: Double Dash
+
+---
+
+class: coloredBackground
+
+# Microsoft kompo
+
+...
+
+
+---
+
+class: coloredBackground
+
+# Andre kompoer
+
+...
+
+    </textarea>
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+  </script>
+  <script>
+    var slideshow = remark.create();
+    // every 5 seconds (change to your desired interval), fire the helper function
+    setInterval(function () {
+      carousel(slideshow)
+    }, 5000);
+
+    function carousel(varObject) {
+      var slideCount = varObject.getSlideCount() - 1;
+      var currentSlide = varObject.getCurrentSlideIndex();
+      // if the slideshow is on the last slide, go back to the first slide; if not, call gotoNextSlide();
+      if (currentSlide == slideCount) {
+        varObject.gotoFirstSlide();
+      } else {
+        varObject.gotoNextSlide();
+      }
+    }
+  </script>
+</body>
+
+</html>
