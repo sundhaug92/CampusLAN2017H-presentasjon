@@ -126,10 +126,15 @@ class: coloredBackground
 
 ---
 
-class: coloredBackground
+class: coloredBackground, center, middle
 
 ## Mario Kart: Double Dash
-- Påmelding: http://bit.ly/HSN-CL-MKDD
+### Vinnere
+    1. Tarjei
+    2. Espen
+    3. Mads
+    4. Manuel
+    5. Ida
 
 ---
 
@@ -154,15 +159,19 @@ background-image: url(./Meny%204-3%20skjerm.jpg)
     setInterval(function () {
       carousel(slideshow)
     }, 10000);
+    var rounds = 0;
 
     function carousel(varObject) {
       var slideCount = varObject.getSlideCount() - 1;
       var currentSlide = varObject.getCurrentSlideIndex();
       // if the slideshow is on the last slide, go back to the first slide; if not, call gotoNextSlide();
       if (currentSlide == slideCount) {
+        // Count number of rounds performed, if 10 then reload.
+        if (++rounds == 10) window.reload(true);
         varObject.gotoFirstSlide();
       } else {
         varObject.gotoNextSlide();
+        rounds = 0;
       }
     }
   </script>
