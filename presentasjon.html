@@ -168,7 +168,7 @@ background-image: url(./Meny%204-3%20skjerm.jpg)
       // if the slideshow is on the last slide, go back to the first slide; if not, call gotoNextSlide();
       if (currentSlide == slideCount) {
         // Count number of rounds performed, if 10 then reload.
-        if (++rounds == 10) window.reload(true);
+        if (++rounds == 10) location.reload(true);
         varObject.gotoFirstSlide();
       } else {
         varObject.gotoNextSlide();
