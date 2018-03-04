@@ -2,18 +2,47 @@
 <html>
 
 <head>
-  <title>Title</title>
+  <title>CampusLAN infoscreen</title>
+  <script>
+    // https://stackoverflow.com/questions/9083037/convert-a-number-into-a-roman-numeral-in-javascript
+      function romanize (num) {
+        if (!+num)
+            return NaN;
+        var digits = String(+num).split(""),
+            key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM",
+                   "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
+                   "","I","II","III","IV","V","VI","VII","VIII","IX"],
+            roman = "",
+            i = 3;
+        while (i--)
+            roman = (key[+digits.pop() + (i * 10)] || "") + roman;
+        return Array(+digits.join("") + 1).join("M") + roman;
+    }
+    function lanName(){
+      var s="CampusLAN ";
+      var d=new Date();
+      s+=romanize(d.getFullYear()-(2018-6)+(Math.round(d.getMonth()/6)));
+      return s;
+    }
+    document.title=lanName()+" infoscreen";
+  </script>
   <meta charset="utf-8">
   <style>
     @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+    @import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
     @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
     @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
+    .remark-container,
+    .remark-slides-area,
     body,
     a {
       font-family: 'Droid Serif';
       background-color: 'black';
-      color: white
+      color: white;
+    }
+    ul{
+      list-style-type: none;
     }
 
     h1,
@@ -27,9 +56,12 @@
     .remark-inline-code {
       font-family: 'Ubuntu Mono';
     }
-
+    .remark-slide-number {
+      display: none;
+    }
     .coloredBackground {
-      background-color: #000
+      background-color: #000;
+      background-image: none !important;
     }
 
     .fitImage {
@@ -39,9 +71,31 @@
     .redText {
       color: red
     }
+    table{
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      text-align: center;
+      width: 60%;
+    }
+    tr{
+      height: 40px;
+    }
+    tr:nth-child(even) {background-color: #111;}
 
     img {
       max-width: 500px;
+    }
+    div#clock {
+      z-index: 5;
+      font-size: 20px;
+      position: absolute;
+      bottom: -3px;
+      left: 0px;
+      color:chartreuse;
+      border-top-right-radius: 5px;
+      background-color:#0000007f;
+      font-family: 'Roboto Mono'
     }
   </style>
 </head>
@@ -49,143 +103,70 @@
 <body>
   <textarea id="source">
 
-class: fitImage
+layout: true
+class: center, middle,  fitImage
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/c4/PM5544_with_non-PAL_signals.png)
+background-color: #000
+---
+---
 
-background-image: url(Velkommen%20til%20campuslan%20slide.jpg)
+background-image: url(slide1_velkommen.jpg)
+
+---
+
+background-image: url(slide2_program.jpg)
+
+---
+
+background-image: url(slide3_meny.jpg)
+
+# Menu-stuff
+## Fill in on March 5th
 
 
 ---
-class: fitImage
-background-image: url(Like%20us%20on%20facebook.jpg)
+
+background-image: url(slide4_compos.jpg)
+
+---
+
+background-image: url(slide5_facebook.jpg)
+
+---
+
+background-image: url(slide6_transport.jpg)
+
+---
+
+background-image: url(slide7_sponsorer.jpg)
+
+---
+
+class: coloredBackground
+# Horten kommune-stuff?
+
 ---
 
 class: coloredBackground, center, middle
-
 # Join oss på Discord: bit.ly/HSN-CL-DISCORD
 
 ---
 
 class: coloredBackground
-
 # VR
 - Besøk ved kantina
 - Sponset av VDU og Kodeklubben
 
+
+
 ![](VDU_Web%20Logo.png)
 ![](kodeklubben_tønsberg_lang_300ppi.png)
 
----
-
-class: coloredBackground, redText, center, middle
-
-# DØRA UT ER LÅST
-## Snakk med admin om du skal ut og vil inn innen dørene åpnes igjen
-
----
-
-class: coloredBackground
-
-## Happy hour (frem til 1:30)
-- 10 stk smågodt 5kr
-- Vaffel 5kr
-- Sandwich 10kr
-- Pizza 15kr
-- Halvt brett med brus 100kr
-- 2 RONIN til 20kr
-
----
-
-class: coloredBackground
-
-## Hackathon - case 1
-- Open class (any language, any compiler, any idea)
-- Starts: Friday 20:00
-- Ends: Caturday 20:00
-
----
-
-class: coloredBackground
-
-## Hackathon - case 2
-- Hack Me!
-- Hack the Joomla-page at 172.16.0.10 and change the front page
-- first one gets the price
-- Won by Petter through physical access
-
----
-
-class: coloredBackground
-
-## Some "new" input about Office 365 tools
-- If 10 people register at http://bit.ly/HSN-CL-365, we'll have a go
-- Learn about some neat stuff in Office 365, including Microsoft Flow
-
----
-class: coloredBackground
-
-## Overwatch
-- Format: 3v3 Lockout elimination
-- Vinner: Team EdgeLords
-
----
-
-class: coloredBackground
-
-## Super Smash Bros. Melee
-- Påmelding: Se CampusLANs facebook-side
-- Lørdag 20:00
-
----
-
-class: coloredBackground, center, middle
-
-## Mario Kart: Double Dash
-### Vinnere
-    1. Tarjei
-    2. Espen
-    3. Mads
-    4. Manuel
-    5. Ida
-
----
-
-
-class: coloredBackground
-
-# Analoge kompoer med jentene
-- Rope-jumping with network-cable - Espen, 138 jumps
-
-...
----
-class: fitImage
-
-background-image: url(./Meny%204-3%20skjerm.jpg)
-
-
     </textarea>
-  <script src="https://remarkjs.com/downloads/remark-latest.min.js">
-  </script>
-  <script>
-    var slideshow = remark.create();
-    // every 10 seconds (change to your desired interval), fire the helper function
-    setInterval(function () {
-      carousel(slideshow)
-    }, 10000);
-    var rounds = 0;
-
-    function carousel(varObject) {
-      var slideCount = varObject.getSlideCount() - 1;
-      var currentSlide = varObject.getCurrentSlideIndex();
-      // if the slideshow is on the last slide, go back to the first slide; if not, call gotoNextSlide();
-      if (currentSlide == slideCount) {
-        // Count number of rounds performed, if 10 then reload.
-        if (++rounds == 10) location.reload(true);
-        varObject.gotoFirstSlide();
-      } else {
-        varObject.gotoNextSlide();
-      }
-    }
-  </script>
+<div id="clock">XX:XX:XX</div>
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+  <script src="slideshow.js"></script>
+  <script src="clock.js"></script>
 </body>
 
 </html>
