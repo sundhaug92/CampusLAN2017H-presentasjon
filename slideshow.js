@@ -2,7 +2,7 @@ var debug = true;
 var slideshow = remark.create();
 // every 10 seconds (change to your desired interval), fire the helper function
 if (!debug) setInterval(function () {
-    carousel(slideshow)
+    carousel(slideshow);
 }, 10000);
 
 var rounds = 0;
