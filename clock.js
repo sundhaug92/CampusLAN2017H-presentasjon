@@ -5,12 +5,12 @@ function set_clock() {
     document.getElementById("clock").innerHTML = to2digit(d.getHours()) + ":" + to2digit(d.getMinutes()) + ":" + to2digit(d.getSeconds());
     if (d > 6 && d < 22) {
         if (clock_mode!="night")console.log("Clock: Night-mode");
-        document.getElementById("clock").style.backgroundColor = "#0000007f";
+        document.getElementById("clock").style.backgroundColor = "#000000ff";
         clock_mode = "night";
     }
     else {
         if(clock_mode!="day")console.log("Clock: Day-mode");
-        document.getElementById("clock").style.backgroundColor = "#000000ff";
+        document.getElementById("clock").style.backgroundColor = "#0000007f";
         clock_mode = "day";
     }
 }
