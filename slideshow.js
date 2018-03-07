@@ -1,4 +1,4 @@
-var debug = true;
+var debug = false;
 var slideshow = remark.create();
 // every 10 seconds (change to your desired interval), fire the helper function
 if (!debug) setInterval(function () {
